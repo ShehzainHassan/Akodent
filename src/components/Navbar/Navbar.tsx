@@ -6,6 +6,9 @@ const NavContainer = styled.nav`
   display: flex;
   justify-content: center;
   background-color: ${Colors.white100};
+  position: sticky;
+  top: 0;
+  z-index: 10;
 `;
 
 const NavList = styled.ul`

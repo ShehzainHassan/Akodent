@@ -6,7 +6,13 @@ export const BigTitle = styled.h1<{ $fontSize?: string; $color?: string }>`
   color: ${(props) => props.color || Colors.gray200};
 `;
 
-export const SectionTitle = styled.h2<{ $fontSize?: string; $color?: string }>`
+export const SectionTitle = styled.h2<{
+  $fontSize?: string;
+  $color?: string;
+  $fontfamily?: string;
+}>`
+  font-family: ${(props) => props.$fontfamily || "Montserrat"}, sans-serif;
+
   font-size: ${(props) => props.$fontSize || "60px"};
   color: ${(props) => props.color || Colors.gray200};
 `;
@@ -72,9 +78,11 @@ export const MediumText = styled.p<{
   color: ${(props) => props.color || Colors.black200};
 `;
 export const BodyText = styled.p<{
+  $fontfamily?: string;
   $fontSize?: string;
   $color?: string;
 }>`
+  font-family: ${(props) => props.$fontfamily || "Montserrat"}, sans-serif;
   font-size: ${(props) => props.$fontSize || "16px"};
   color: ${(props) => props.color || Colors.black200};
 `;
