@@ -56,9 +56,11 @@ export const BigText = styled.p<{
 `;
 
 export const LargeText = styled.p<{
+  $fontfamily?: string;
   $fontSize?: string;
   $color?: string;
 }>`
+  font-family: ${(props) => props.$fontfamily || "Montserrat"}, sans-serif;
   font-size: ${(props) => props.$fontSize || "22px"};
   color: ${(props) => props.color || Colors.black200};
 `;
