@@ -17,7 +17,13 @@ export const SectionTitle = styled.h2<{
   color: ${(props) => props.color || Colors.gray200};
 `;
 
-export const SubHeading = styled.h3<{ $fontSize?: string; $color?: string }>`
+export const SubHeading = styled.h3<{
+  $fontSize?: string;
+  $color?: string;
+  $fontfamily?: string;
+}>`
+  font-family: ${(props) => props.$fontfamily || "Montserrat"}, sans-serif;
+
   font-size: ${(props) => props.$fontSize || "48px"};
   color: ${(props) => props.color || Colors.black200};
 `;
