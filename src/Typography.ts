@@ -1,7 +1,13 @@
 import styled from "styled-components";
 import { Colors } from "./Colors";
 
-export const BigTitle = styled.h1<{ $fontSize?: string; $color?: string }>`
+export const BigTitle = styled.h1<{
+  $fontSize?: string;
+  $color?: string;
+  $fontfamily?: string;
+}>`
+  font-family: ${(props) => props.$fontfamily || "Montserrat"}, sans-serif;
+
   font-size: ${(props) => props.$fontSize || "72px"};
   color: ${(props) => props.color || Colors.gray200};
 `;
@@ -110,7 +116,10 @@ export const BodyText = styled.p<{
 export const SmallText = styled.p<{
   $fontSize?: string;
   $color?: string;
+  $fontfamily?: string;
 }>`
+  font-family: ${(props) => props.$fontfamily || "Montserrat"}, sans-serif;
+
   font-size: ${(props) => props.$fontSize || "14px"};
   color: ${(props) => props.color || Colors.black200};
 `;

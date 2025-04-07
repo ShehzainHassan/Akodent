@@ -26,7 +26,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   padding-top: 1px;
-  padding-bottom: 4.44rem;
+  padding-bottom: 4rem;
 `;
 
 const BackgroundVideo = styled.video`
@@ -56,7 +56,7 @@ const Mouse = styled.div`
   width: 1.67rem;
   display: block;
   z-index: 1;
-  margin: auto;
+  margin-bottom: 20px;
   left: 50%;
   bottom: 1px;
   transform: translate(-50%, 0);

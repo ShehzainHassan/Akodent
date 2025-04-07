@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import NavTop from "./components/NavTop/NavTop";
 import Services from "./components/Services/Services";
 import Smile from "./components/Smile/Smile";
+import Sterlization from "./components/Sterlization/Sterlization";
 import Team from "./components/Team/Team";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Services />
       <Team />
       <Smile />
+      <Sterlization />
       <Footer />
     </>
   );

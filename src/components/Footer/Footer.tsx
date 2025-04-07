@@ -6,7 +6,7 @@ const Container = styled("div")`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 35px 20px 20px 45px;
+  padding: 20px 80px;
   margin: 0 auto;
   background-color: ${Colors.white100};
 `;
@@ -14,24 +14,69 @@ const Contact = styled("div")`
   display: flex;
   flex-direction: column;
 `;
-
+const SocialIcons = styled("div")`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+`;
+const Phone = styled("img")`
+  width: 48px;
+  height: 48px;
+  z-index: 3;
+`;
+const IconContainer = styled("div")`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 50px;
+`;
+const Image = styled("img")`
+  width: 60px;
+  height: auto;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  opacity: 0.3;
+`;
 export default function Footer() {
   return (
     <Container>
-      <Contact>
-        <BodyText color={Colors.brown150}>066 184 00 000</BodyText>
-        <BodyText color={Colors.brown150}>Mon - Sat 10:00 - 18:00</BodyText>
-      </Contact>
+      <IconContainer>
+        <Image src="/images/phone.png" alt="phone" />
+        <Contact>
+          <BodyText color={Colors.brown150}>066 184 00 000</BodyText>
+          <BodyText color={Colors.brown150}>Mon - Sat 10:00 - 18:00</BodyText>
+        </Contact>
+      </IconContainer>
+
       <img
         src="/images/logo-vertical.png"
         alt="logo"
         width={165}
         height={179}
       />
-      <Contact>
-        <BodyText color={Colors.brown150}>village of Stari Petrivtsi,</BodyText>
-        <BodyText color={Colors.brown150}>57 Kniazya Sviatoslava St.</BodyText>
-      </Contact>
+      <IconContainer>
+        <Image src="/images/location.png" alt="location" />
+        <Contact>
+          <BodyText color={Colors.brown150}>
+            village of Stari Petrivtsi,
+          </BodyText>
+          <BodyText color={Colors.brown150}>
+            57 Kniazya Sviatoslava St.
+          </BodyText>
+        </Contact>
+      </IconContainer>
+      <SocialIcons>
+        <Phone src="/images/phone.png" alt="phone" />
+        <Phone src="/images/viber.png" alt="viber" />
+        <Phone src="/images/telegram.png" alt="telegram" />
+      </SocialIcons>
     </Container>
   );
 }

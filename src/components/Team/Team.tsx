@@ -6,7 +6,7 @@ const Container = styled("div")`
   display: flex;
   flex-direction: column;
   background-color: ${Colors.white100};
-  padding: 0 15px;
+  padding: 30px 15px;
 `;
 const TeamContent = styled("div")`
   max-width: 1620px;

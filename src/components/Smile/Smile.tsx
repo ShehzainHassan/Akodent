@@ -1,6 +1,18 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { LargeText, SectionTitle } from "../../Typography";
 import { Colors } from "../../Colors";
+
+const moveArrows = keyframes`
+  0% {
+   -webkit-transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(50%);
+  }
+  100% {
+    -webkit-transform: translateY(100%);  
+    }
+`;
 
 const Container = styled("div")`
   display: grid;
@@ -37,9 +49,90 @@ const VideoOverlay = styled.div`
 const Title = styled("div")`
   margin: 17px auto;
 `;
+const Lines = styled("div")`
+  display: block;
+  content: "";
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
+const Line1 = styled("div")`
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(151, 153, 169, 0.3);
+  overflow: hidden;
+`;
+const Line2 = styled("div")`
+  position: absolute;
+  top: 0;
+  left: 30%;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(151, 153, 169, 0.3);
+  overflow: hidden;
+`;
+const Line3 = styled("div")`
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(151, 153, 169, 0.3);
+  overflow: hidden;
+`;
+const Line4 = styled("div")`
+  position: absolute;
+  top: 0;
+  left: 70%;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(151, 153, 169, 0.3);
+  overflow: hidden;
+`;
+const Line5 = styled("div")`
+  position: absolute;
+  top: 0;
+  left: 90%;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(151, 153, 169, 0.3);
+  overflow: hidden;
+`;
+const Span = styled("span")`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  animation: ${moveArrows} 4s linear infinite;
+`;
 export default function Smile() {
   return (
     <Container>
+      <Lines>
+        <Line1>
+          <Span />
+        </Line1>
+        <Line2>
+          <Span />
+        </Line2>
+        <Line3>
+          <Span />
+        </Line3>
+        <Line4>
+          <Span />
+        </Line4>
+        <Line5>
+          <Span />
+        </Line5>
+      </Lines>
       <BackgroundVideo autoPlay loop muted playsInline>
         <source src="/videos/smile.mp4" type="video/mp4" />
       </BackgroundVideo>
