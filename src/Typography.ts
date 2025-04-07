@@ -75,6 +75,16 @@ export const LargeText = styled.p<{
   font-family: ${(props) => props.$fontfamily || "Montserrat"}, sans-serif;
   font-size: ${(props) => props.$fontSize || "22px"};
   color: ${(props) => props.color || Colors.black200};
+  @media (max-width: 1609px) and (min-width: 1440px) {
+    font-size: 20.5px;
+  }
+
+  @media (max-width: 1439px) {
+    font-size: 17px;
+  }
+  @media (max-width: 1280px) {
+    font-size: 16px;
+  }
 `;
 export const MediumText = styled.p<{
   $fontSize?: string;

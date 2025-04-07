@@ -6,21 +6,24 @@ const Container = styled("div")`
   display: flex;
   flex-direction: column;
   background-color: ${Colors.white100};
+  padding: 0 15px;
 `;
 const TeamContent = styled("div")`
   max-width: 1620px;
-  margin: 50px 125px 0px;
-  margin-top: 2.78rem;
-  padding: 0px 10px;
   width: 100%;
 `;
 const TeamWrapper = styled("div")`
   position: relative;
 `;
+const TeamHeading = styled(SubHeading)`
+  position: relative;
+  top: 0px;
+  left: 115px;
+`;
 const TeamTitle = styled("div")`
   position: absolute;
   top: -40px;
-  left: -115px;
+  left: 0px;
   z-index: 0;
   letter-spacing: -0.01em;
 `;
@@ -64,12 +67,12 @@ export default function Team() {
     <Container>
       <TeamContent>
         <TeamWrapper>
-          <SubHeading
+          <TeamHeading
             $fontfamily="Cambria Math"
             color={Colors.gray200}
             $fontSize="53.33px">
             Our team :
-          </SubHeading>
+          </TeamHeading>
           <TeamTitle>
             <SubHeading
               $fontfamily="Cambria Math"
