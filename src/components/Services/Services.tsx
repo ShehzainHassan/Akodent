@@ -16,16 +16,20 @@ const ContentContainer = styled("div")`
 
 const LeftHeadingContainer = styled("div")`
   display: flex;
+  align-items: center;
   justify-content: flex-start;
   padding: 3rem;
 `;
 const RightHeadingContainer = styled("div")`
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   padding: 3rem;
 `;
 const CenterHeadingContainer = styled("div")`
   display: flex;
+  gap: 20px;
+  align-items: center;
   justify-content: center;
   padding: 3rem;
 `;
@@ -58,6 +62,26 @@ const ImagesContainer = styled("div")`
   justify-content: center;
   flex-wrap: wrap;
 `;
+interface LineProps {
+  $width?: string;
+}
+
+const LeftLine = styled("div")<LineProps>`
+  width: ${({ $width }) => $width || "150px"};
+  height: 2px;
+  background-color: ${Colors.brown150};
+  margin-left: -4rem;
+`;
+
+const RightLine = styled("div")<LineProps>`
+  width: ${({ $width }) => $width || "150px"};
+  height: 2px;
+  background-color: ${Colors.brown150};
+  margin-right: -4rem;
+`;
+const Heading = styled(ContentHeading)`
+  white-space: nowrap;
+`;
 
 export default function Services() {
   return (
@@ -70,6 +94,7 @@ export default function Services() {
       </SubHeading>
       <ContentContainer>
         <LeftHeadingContainer>
+          <LeftLine />
           <ContentHeading
             color={Colors.gray200}
             $fontfamily="Comfortaa, Tahoma, sans-serif">
@@ -107,6 +132,7 @@ export default function Services() {
           $fontfamily="Comfortaa, Tahoma, sans-serif">
           Orthopedics and stomatology
         </ContentHeading>
+        <RightLine />
       </RightHeadingContainer>
       <ImagesContainer>
         <ServiceItem>
@@ -135,11 +161,13 @@ export default function Services() {
         </ServiceItem>
       </ImagesContainer>
       <CenterHeadingContainer>
-        <ContentHeading
+        <LeftLine $width="40%" />
+        <Heading
           color={Colors.gray200}
           $fontfamily="Comfortaa, Tahoma, sans-serif">
           Children's mathematics
-        </ContentHeading>
+        </Heading>
+        <RightLine $width="40%" />
       </CenterHeadingContainer>
       <ImagesContainer>
         <ServiceItem>
@@ -180,6 +208,7 @@ export default function Services() {
         </ServiceItem>
       </ImagesContainer>
       <LeftHeadingContainer>
+        <LeftLine />
         <ContentHeading
           color={Colors.black200}
           $fontfamily="Comfortaa, Tahoma, sans-serif">

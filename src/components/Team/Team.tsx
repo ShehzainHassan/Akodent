@@ -87,7 +87,9 @@ export default function Team() {
         <MainImg />
         <Details>
           <PersonDetails>
-            <ContentHeading>Korol Lesya Anatoliivna</ContentHeading>
+            <ContentHeading $fontfamily="Comfortaa, Tahoma, sans-serif">
+              Korol Lesya Anatoliivna
+            </ContentHeading>
             <>
               <LargeText>Director.Dentist,</LargeText>
               <LargeText>pediatric dentist</LargeText>

@@ -108,10 +108,12 @@ export const BodyText = styled.p<{
   $fontfamily?: string;
   $fontSize?: string;
   $color?: string;
+  $fontWeight?: string;
 }>`
   font-family: ${(props) => props.$fontfamily || "Montserrat"}, sans-serif;
   font-size: ${(props) => props.$fontSize || "16px"};
   color: ${(props) => props.color || Colors.black200};
+  font-weight: ${(props) => props.$fontWeight || 500};
 `;
 export const SmallText = styled.p<{
   $fontSize?: string;
