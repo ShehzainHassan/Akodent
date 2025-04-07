@@ -23,15 +23,16 @@ export const SubHeading = styled.h3<{
   $fontfamily?: string;
 }>`
   font-family: ${(props) => props.$fontfamily || "Montserrat"}, sans-serif;
-
   font-size: ${(props) => props.$fontSize || "48px"};
   color: ${(props) => props.color || Colors.black200};
 `;
 
 export const ContentHeading = styled.h4<{
+  $fontfamily?: string;
   $fontSize?: string;
   $color?: string;
 }>`
+  font-family: ${(props) => props.$fontfamily || "Montserrat"}, sans-serif;
   font-size: ${(props) => props.$fontSize || "36px"};
   color: ${(props) => props.color || Colors.black200};
 `;
@@ -87,9 +88,13 @@ export const LargeText = styled.p<{
   }
 `;
 export const MediumText = styled.p<{
+  $fontfamily?: string;
+
   $fontSize?: string;
   $color?: string;
 }>`
+  font-family: ${(props) => props.$fontfamily || "Montserrat"}, sans-serif;
+
   font-size: ${(props) => props.$fontSize || "18px"};
   color: ${(props) => props.color || Colors.black200};
 `;

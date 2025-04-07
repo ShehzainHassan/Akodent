@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { MediumText, SmallHeading, SubHeading } from "../../Typography";
 import { Colors } from "../../Colors";
+import { ContentHeading, MediumText, SubHeading } from "../../Typography";
 
 const Container = styled("div")`
   display: flex;
@@ -70,12 +70,24 @@ export default function Services() {
       </SubHeading>
       <ContentContainer>
         <LeftHeadingContainer>
-          <SmallHeading $fontSize="32px">Therapy</SmallHeading>
+          <ContentHeading
+            color={Colors.gray200}
+            $fontfamily="Comfortaa, Tahoma, sans-serif">
+            Therapy
+          </ContentHeading>
         </LeftHeadingContainer>
         <ImagesContainer>
           <ServiceItem>
             <Image src="/images/caries.png" alt="caries" />
-            <MediumText>Caries treatment</MediumText>
+            <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+              Caries treatment
+            </MediumText>
+          </ServiceItem>
+          <ServiceItem>
+            <Image src="/images/caries.png" alt="caries" />
+            <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+              Caries treatment
+            </MediumText>
           </ServiceItem>
           <ServiceItem>
             <Image src="/images/caries.png" alt="caries" />
@@ -83,81 +95,115 @@ export default function Services() {
           </ServiceItem>
           <ServiceItem>
             <Image src="/images/caries.png" alt="caries" />
-            <MediumText>Caries treatment</MediumText>
-          </ServiceItem>
-          <ServiceItem>
-            <Image src="/images/caries.png" alt="caries" />
-            <MediumText>Caries treatment</MediumText>
+            <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+              Caries treatment
+            </MediumText>
           </ServiceItem>
         </ImagesContainer>
       </ContentContainer>
       <RightHeadingContainer>
-        <SmallHeading $fontSize="32px">
+        <ContentHeading
+          color={Colors.black200}
+          $fontfamily="Comfortaa, Tahoma, sans-serif">
           Orthopedics and stomatology
-        </SmallHeading>
+        </ContentHeading>
       </RightHeadingContainer>
       <ImagesContainer>
         <ServiceItem>
           <Image src="/images/caries.png" alt="caries" />
-          <MediumText>Caries treatment</MediumText>
+          <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+            Caries treatment
+          </MediumText>
         </ServiceItem>
         <ServiceItem>
           <Image src="/images/caries.png" alt="caries" />
-          <MediumText>Caries treatment</MediumText>
+          <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+            Caries treatment
+          </MediumText>
         </ServiceItem>
         <ServiceItem>
           <Image src="/images/caries.png" alt="caries" />
-          <MediumText>Caries treatment</MediumText>
+          <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+            Caries treatment
+          </MediumText>
         </ServiceItem>
         <ServiceItem>
           <Image src="/images/caries.png" alt="caries" />
-          <MediumText>Caries treatment</MediumText>
+          <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+            Caries treatment
+          </MediumText>
         </ServiceItem>
       </ImagesContainer>
       <CenterHeadingContainer>
-        <SmallHeading $fontSize="32px">Child Psychology</SmallHeading>
+        <ContentHeading
+          color={Colors.gray200}
+          $fontfamily="Comfortaa, Tahoma, sans-serif">
+          Children's mathematics
+        </ContentHeading>
       </CenterHeadingContainer>
       <ImagesContainer>
         <ServiceItem>
           <Image src="/images/caries.png" alt="caries" />
-          <MediumText>Caries treatment</MediumText>
+          <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+            Caries treatment
+          </MediumText>
         </ServiceItem>
         <ServiceItem>
           <Image src="/images/caries.png" alt="caries" />
-          <MediumText>Caries treatment</MediumText>
+          <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+            Caries treatment
+          </MediumText>
         </ServiceItem>
         <ServiceItem>
           <Image src="/images/caries.png" alt="caries" />
-          <MediumText>Caries treatment</MediumText>
+          <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+            Caries treatment
+          </MediumText>
         </ServiceItem>
         <ServiceItem>
           <Image src="/images/caries.png" alt="caries" />
-          <MediumText>Caries treatment</MediumText>
+          <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+            Caries treatment
+          </MediumText>
         </ServiceItem>
         <ServiceItem>
           <Image src="/images/caries.png" alt="caries" />
-          <MediumText>Caries treatment</MediumText>
+          <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+            Caries treatment
+          </MediumText>
         </ServiceItem>
         <ServiceItem>
           <Image src="/images/caries.png" alt="caries" />
-          <MediumText>Caries treatment</MediumText>
+          <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+            Caries treatment
+          </MediumText>
         </ServiceItem>
       </ImagesContainer>
       <LeftHeadingContainer>
-        <SmallHeading $fontSize="32px">Surgery</SmallHeading>
+        <ContentHeading
+          color={Colors.black200}
+          $fontfamily="Comfortaa, Tahoma, sans-serif">
+          Surgery
+        </ContentHeading>
       </LeftHeadingContainer>
       <ImagesContainer>
         <ServiceItem>
           <Image src="/images/caries.png" alt="caries" />
-          <MediumText>Caries treatment</MediumText>
+          <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+            Caries treatment
+          </MediumText>
         </ServiceItem>
         <ServiceItem>
           <Image src="/images/caries.png" alt="caries" />
-          <MediumText>Caries treatment</MediumText>
+          <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+            Caries treatment
+          </MediumText>
         </ServiceItem>
         <ServiceItem>
           <Image src="/images/caries.png" alt="caries" />
-          <MediumText>Caries treatment</MediumText>
+          <MediumText $fontfamily="Comfortaa, Tahoma, sans-serif">
+            Caries treatment
+          </MediumText>
         </ServiceItem>
       </ImagesContainer>
     </Container>
