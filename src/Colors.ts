@@ -11,4 +11,5 @@ export const Colors = {
 
   brown100: "#a19585",
   brown150: "#a29585",
+  brown200: "#C2B5A5",
 };

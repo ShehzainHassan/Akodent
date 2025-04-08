@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Colors } from "../../Colors";
-import { LargeText } from "../../Typography";
 import { useNavbar } from "../../NavbarContext";
+import { LargeText } from "../../Typography";
 const Container = styled("div")`
   display: flex;
   justify-content: space-between;
@@ -45,14 +45,26 @@ const Image = styled("img")`
   position: absolute;
   top: 0;
   left: 0px;
+  @media (min-width: 1440px) {
+    width: 4.16rem;
+    height: 4.16rem;
+  }
+  @media (min-width: 1610px) {
+    width: 4.83rem;
+    height: 4.83rem;
+  }
 `;
 const Logo = styled("img")`
+  height: 3.33rem;
+  width: 12.22rem;
   @media (min-width: 1440px) {
     height: 4.4444444444rem;
     width: 17.7611111111rem;
   }
-  height: 3.33rem;
-  width: 12.22rem;
+  @media (min-width: 1610px) {
+    height: 5.83rem;
+    width: 23.305rem;
+  }
 `;
 const Hamburger = styled("div")`
   @media (max-width: 1024px) {
@@ -94,8 +106,7 @@ const HamburgerBottom = styled("span")`
 `;
 
 export default function NavTop() {
-  const { isOpen, toggleNavbar } = useNavbar();
-  console.log("Is Open = ", isOpen);
+  const { toggleNavbar } = useNavbar();
   return (
     <Container>
       <Logo src="/images/logo.png" alt="logo" />

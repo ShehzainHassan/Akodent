@@ -6,7 +6,6 @@ const Container = styled("div")`
   display: flex;
   flex-direction: column;
   padding: 0 15px;
-  background-color: ${Colors.white100};
 `;
 const ContentContainer = styled("div")`
   display: flex;

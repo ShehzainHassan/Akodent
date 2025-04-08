@@ -5,8 +5,10 @@ import Navbar from "./components/Navbar/Navbar";
 import NavTop from "./components/NavTop/NavTop";
 import Services from "./components/Services/Services";
 import Smile from "./components/Smile/Smile";
+import Space from "./components/Space/Space";
 import Sterlization from "./components/Sterlization/Sterlization";
 import Team from "./components/Team/Team";
+import { Wrapper } from "./components/Wrapper/Wrapper";
 
 function App() {
   return (
@@ -14,10 +16,14 @@ function App() {
       <NavTop />
       <Navbar />
       <Hero />
-      <Services />
-      <Team />
+      <Wrapper>
+        <Space />
+        <Services />
+        <Team />
+      </Wrapper>
       <Smile />
       <Sterlization />
+
       <Footer />
     </>
   );

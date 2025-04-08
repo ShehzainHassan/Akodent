@@ -8,10 +8,22 @@ const Container = styled("div")`
   padding: 30px;
   align-items: center;
   background-color: ${Colors.white100};
+  @media (max-width: 1023px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 const VideoContainer = styled("div")`
   width: 36.2rem;
   height: 30.16rem;
+  @media (min-width: 479px) {
+    width: 19.4rem;
+    height: 13.125rem;
+  }
+  @media (min-width: 1023px) {
+    width: 32rem;
+    height: 22rem;
+  }
 `;
 const Bold = styled("span")`
   font-weight: bold;
@@ -41,16 +53,21 @@ const BackgroundVideo = styled.video`
   object-fit: cover;
   border-radius: 11.11rem;
 `;
+const SterilizationContainer = styled("div")`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
 export default function Sterlization() {
   return (
     <Container>
       <VideoContainer>
         <BackgroundVideo autoPlay loop muted playsInline>
-          <source src="/videos/smile.mp4" type="video/mp4" />
+          <source src="/videos/sterilization.mp4" type="video/mp4" />
         </BackgroundVideo>
       </VideoContainer>
       <SterlizationSection>
-        <div>
+        <SterilizationContainer>
           <BigTitle $fontfamily="Cambria Math, Times New Roman">
             Sterilization is new !
           </BigTitle>
@@ -112,7 +129,7 @@ export default function Sterlization() {
               patient's oral mucosa, blood, or tissues.
             </BodyText>
           </StagesContainer>
-        </div>
+        </SterilizationContainer>
         <Scrollable>
           <BodyText color={Colors.gray200}>
             Dentistry Stari Petrivtsi, dentistry Nova Petrivtsi, dentistry

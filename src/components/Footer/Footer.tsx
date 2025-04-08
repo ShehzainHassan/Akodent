@@ -9,6 +9,9 @@ const Container = styled("div")`
   padding: 20px 80px;
   margin: 0 auto;
   background-color: ${Colors.white100};
+  @media (max-width: 1023px) {
+    padding: 20px 0px;
+  }
 `;
 const Contact = styled("div")`
   display: flex;

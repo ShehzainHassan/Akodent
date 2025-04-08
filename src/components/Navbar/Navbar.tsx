@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Colors } from "../../Colors";
 import { BodyText, TinyHeading } from "../../Typography";
 import { useNavbar } from "../../NavbarContext";
+import { useState } from "react";
 
 const NavContainer = styled.nav`
   display: flex;
@@ -27,18 +28,20 @@ const NavList = styled.ul`
 `;
 const MobileNav = styled.div<{ open: boolean }>`
   position: fixed;
-  top: 10;
-  right: ${(props) => (props.open ? "0" : "-100%")};
-  width: 100%;
+  left: ${(props) => (props.open ? "0" : "100%")};
+  width: 100vw;
+  height: 100vh;
   list-style-type: none;
-  height: 100%;
   background-color: ${Colors.white100};
+  display: ${(props) => (props.open ? "flex" : "none")};
   display: flex;
   flex-direction: column;
-  gap: 20px;
   transition: right 0.3s ease-in-out;
   z-index: 10;
-  @media (min-width: 1025px) {
+  visibility: ${(props) => (props.open ? "visible" : "hidden")};
+  opacity: ${(props) => (props.open ? "1" : "0")};
+  transform: ${(props) => (props.open ? "translateX(0)" : "translateX(100%)")};
+  @media (min-width: 1024px) {
     display: none;
   }
 `;
@@ -48,6 +51,9 @@ const NavItem = styled.li`
   &:hover > div {
     opacity: 1;
     visibility: visible;
+  }
+  @media (max-width: 1025px) {
+    padding: 0 1.67rem;
   }
 `;
 const SubMenu = styled("div")`
@@ -78,8 +84,55 @@ const ItemContainer = styled("div")`
   gap: 10px;
   align-items: center;
 `;
+const StyledHeading = styled(TinyHeading)`
+  padding: 10px 0px;
+  border-bottom: 1px solid ${Colors.black100};
+`;
+const Expandable = styled("div")`
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid ${Colors.black100};
+  padding: 10px 0px;
+`;
+const Button = styled("img")`
+  position: absolute;
+  right: 2px;
+  top: 20%;
+  width: 15px;
+  height: 25px;
+`;
+const MobileSubMenu = styled.div<{ open: boolean }>`
+  position: fixed;
+  left: ${(props) => (props.open ? "0" : "-100%")};
+  width: 100vw;
+  height: 100vh;
+  list-style-type: none;
+  background-color: ${Colors.white100};
+  display: ${(props) => (props.open ? "flex" : "none")};
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease-in-out;
+  z-index: 10;
+  visibility: ${(props) => (props.open ? "visible" : "hidden")};
+  opacity: ${(props) => (props.open ? "1" : "0")};
+  transform: ${(props) => (props.open ? "translateX(0)" : "translateX(100%)")};
+  @media (min-width: 1025px) {
+    display: none;
+  }
+`;
+const BackBtn = styled("img")`
+  width: 40px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  content: "";
+  padding: 10px;
+`;
 export default function Navbar() {
   const { isOpen } = useNavbar();
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
   return (
     <NavContainer>
       <NavList>
@@ -121,21 +174,61 @@ export default function Navbar() {
       </NavList>
       <MobileNav open={isOpen}>
         <NavItem>
-          <TinyHeading $cursor="pointer">Home</TinyHeading>
+          <StyledHeading $fontSize="18px" $cursor="pointer">
+            HOME
+          </StyledHeading>
         </NavItem>
         <NavItem>
-          <TinyHeading $cursor="pointer">Services</TinyHeading>
+          <Expandable>
+            <TinyHeading $fontSize="18px" $cursor="pointer">
+              SERVICES
+            </TinyHeading>
+            <Button
+              src="/images/button.png"
+              alt="expandable"
+              onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}
+            />
+          </Expandable>
         </NavItem>
         <NavItem>
-          <TinyHeading $cursor="pointer">Our team</TinyHeading>
+          <StyledHeading $fontSize="18px" $cursor="pointer">
+            OUR TEAM
+          </StyledHeading>
         </NavItem>
         <NavItem>
-          <TinyHeading $cursor="pointer">Price</TinyHeading>
+          <StyledHeading $fontSize="18px" $cursor="pointer">
+            PRICE
+          </StyledHeading>
         </NavItem>
         <NavItem>
-          <TinyHeading $cursor="pointer">Contacts</TinyHeading>
+          <StyledHeading $fontSize="18px" $cursor="pointer">
+            CONTACTS
+          </StyledHeading>
         </NavItem>
       </MobileNav>
+      {isSubMenuOpen && (
+        <MobileSubMenu open={isSubMenuOpen}>
+          <BackBtn
+            src="/images/back.png"
+            alt="back-arrow"
+            onClick={() => setIsSubMenuOpen(false)}
+          />
+          <NavItem>
+            <StyledHeading $fontSize="18px">
+              THERAPEUTIC DENTISTRY
+            </StyledHeading>
+          </NavItem>
+          <NavItem>
+            <StyledHeading $fontSize="18px">ORTHOPEDIC DENTISTRY</StyledHeading>
+          </NavItem>
+          <NavItem>
+            <StyledHeading $fontSize="18px">PEDIATRIC DENTISTRY</StyledHeading>
+          </NavItem>
+          <NavItem>
+            <StyledHeading $fontSize="18px">SURGICAL DENTISTRY</StyledHeading>
+          </NavItem>
+        </MobileSubMenu>
+      )}
     </NavContainer>
   );
 }
