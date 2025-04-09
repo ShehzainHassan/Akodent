@@ -26,10 +26,14 @@ const SocialIcons = styled("div")`
   bottom: 20px;
   cursor: pointer;
 `;
-const Phone = styled("img")`
+const Icon = styled("img")`
   width: 48px;
   height: 48px;
   z-index: 3;
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
 `;
 const IconContainer = styled("div")`
   position: relative;
@@ -76,9 +80,9 @@ export default function Footer() {
         </Contact>
       </IconContainer>
       <SocialIcons>
-        <Phone src="/images/phone.png" alt="phone" />
-        <Phone src="/images/viber.png" alt="viber" />
-        <Phone src="/images/telegram.png" alt="telegram" />
+        <Icon src="/images/phone.png" alt="phone" />
+        <Icon src="/images/viber.png" alt="viber" />
+        <Icon src="/images/telegram.png" alt="telegram" />
       </SocialIcons>
     </Container>
   );

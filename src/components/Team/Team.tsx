@@ -14,7 +14,7 @@ const Container = styled("div")`
   display: flex;
   flex-direction: column;
   background-color: ${Colors.white100};
-  padding: 30px 15px;
+  padding: 50px 15px;
   @media (max-width: 767px) {
     padding: 0;
   }
@@ -28,8 +28,7 @@ const TeamWrapper = styled("div")`
 `;
 const TeamHeading = styled(SubHeading)`
   position: relative;
-  top: 0px;
-  left: 115px;
+  padding-left: 40px;
 `;
 const TeamTitle = styled("div")`
   position: absolute;

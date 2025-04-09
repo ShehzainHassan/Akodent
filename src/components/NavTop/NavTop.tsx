@@ -6,10 +6,11 @@ const Container = styled("div")`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 15px;
+  padding: 20px 0px;
+  width: 100%;
   background-color: ${Colors.brown100};
   @media (max-width: 1439px) {
-    padding: 0px 15px;
+    padding: 0px;
   }
 `;
 const InfoContainer = styled("div")`

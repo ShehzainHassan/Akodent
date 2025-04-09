@@ -5,7 +5,7 @@ import { ContentHeading, MediumText, SubHeading } from "../../Typography";
 const Container = styled("div")`
   display: flex;
   flex-direction: column;
-  padding: 0 15px;
+  padding: 20px 15px;
 `;
 const ContentContainer = styled("div")`
   display: flex;
