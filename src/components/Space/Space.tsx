@@ -8,8 +8,7 @@ const Container = styled("div")`
 const TextContainer = styled("div")`
   display: flex;
   position: relative;
-  max-width: 1750px;
-  width: 100%;
+  width: 85%;
   background-color: ${Colors.white};
   border: 10px solid ${Colors.brown200};
   border-left: none;
