@@ -1,9 +1,45 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Colors } from "../../Colors";
 import { SectionTitle, SmallHeading } from "../../Typography";
-
+export const flyIn = keyframes`
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  50% {
+    transform: translateX(15%) translateY(-15%) scale(0.8);
+  }
+  100% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+`;
+const AnimatingDots = styled("div")`
+  position: absolute;
+  content: "";
+  width: 12rem;
+  height: 26rem;
+  background: url("https://akodent.com.ua/wp-content/themes/main-theme/images/decoration-white-dots.webp")
+    50% / contain no-repeat;
+  right: -9rem;
+  bottom: -16.6666666667rem;
+  z-index: 0;
+  animation: ${flyIn} 18s linear infinite;
+  @media (max-width: 639px) {
+    right: -4rem;
+    bottom: -25rem;
+    height: 20rem;
+  }
+  @media (min-width: 640px) {
+    right: -6rem;
+  }
+  @media (min-width: 1024px) {
+    right: -8rem;
+  }
+`;
 const Container = styled("div")`
   display: flex;
+  @media (max-width: 639px) {
+    flex-direction: column;
+  }
 `;
 const TextContainer = styled("div")`
   display: flex;
@@ -15,6 +51,11 @@ const TextContainer = styled("div")`
   box-shadow: 0 0 14px rgba(22, 5, 1, 0.72);
   background-color: ${Colors.white};
   left: 0;
+  @media (max-width: 639px) {
+    left: -100px;
+    width: 100%;
+    border-radius: 100px;
+  }
   @media (max-width: 1408px) {
     padding: 1rem 0;
   }
@@ -25,6 +66,18 @@ const TextContainer = styled("div")`
     padding: 3rem 0;
   }
 `;
+const MobileVideoContainer = styled("div")`
+  display: none;
+  @media (max-width: 639px) {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: ${Colors.brown200};
+  }
+`;
 const VideoContainer = styled("div")`
   border: 1px solid ${Colors.brown200};
   border-radius: 50%;
@@ -33,21 +86,24 @@ const VideoContainer = styled("div")`
   transform: translate(0, -50%);
   right: -70px;
   background-color: ${Colors.brown200};
+  @media (max-width: 639px) {
+    display: none;
+  }
   @media (max-width: 768px) {
-    width: 18rem;
-    height: 18rem;
+    width: 16rem;
+    height: 16rem;
   }
   @media (min-width: 769px) {
-    width: 20rem;
-    height: 20rem;
+    width: 17rem;
+    height: 17rem;
   }
   @media (min-width: 1024px) {
-    width: 27.17rem;
-    height: 27.17rem;
+    width: 22.17rem;
+    height: 22.17rem;
   }
   @media (min-width: 1280px) {
-    width: 29.17rem;
-    height: 29.17rem;
+    width: 25.17rem;
+    height: 25.17rem;
   }
   @media (min-width: 1610px) {
     width: 31.17rem;
@@ -74,6 +130,10 @@ const ContentContainer = styled("div")`
   flex-direction: column;
   gap: 20px;
   padding: 20px;
+  @media (max-width: 639px) {
+    padding: 0;
+    padding-left: 120px;
+  }
 `;
 const SubTextContainer = styled("div")`
   display: flex;
@@ -105,6 +165,7 @@ export default function Space() {
             </SmallHeading>
           </SubTextContainer>
         </ContentContainer>
+        <AnimatingDots />
 
         <VideoContainer>
           <SpaceCircle>
@@ -116,6 +177,15 @@ export default function Space() {
           </SpaceCircle>
         </VideoContainer>
       </TextContainer>
+      <MobileVideoContainer>
+        <SpaceCircle>
+          <PosterVideo>
+            <BackgroundVideo autoPlay loop muted playsInline>
+              <source src="/videos/space.mp4" type="video/mp4" />
+            </BackgroundVideo>
+          </PosterVideo>
+        </SpaceCircle>
+      </MobileVideoContainer>
     </Container>
   );
 }

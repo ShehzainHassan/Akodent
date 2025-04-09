@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Colors } from "../../Colors";
 import { BigTitle, BodyText, SmallText, SubHeading } from "../../Typography";
+import { flyIn } from "../Space/Space";
 
 const Container = styled("div")`
   display: grid;
@@ -13,15 +14,36 @@ const Container = styled("div")`
     flex-direction: column;
   }
 `;
+const AnimatingDots = styled("div")`
+  position: absolute;
+  background-image: url("https://akodent.com.ua/wp-content/themes/main-theme/resources/svg/decoration-st-dots.svg");
+  width: 3.33rem;
+  height: 7.5rem;
+  top: 40%;
+  left: -10%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: ${flyIn} 8s linear infinite;
+  @media (max-width: 1023px) {
+    display: none;
+  }
+  @media (min-width: 1440px) {
+    left: -10%;
+  }
+  @media (min-width: 1610px) {
+    left: -20%;
+  }
+`;
 const VideoContainer = styled("div")`
-  width: 36.2rem;
-  height: 30.16rem;
+  position: relative;
+  margin: 0 auto;
   @media (min-width: 479px) {
     width: 19.4rem;
     height: 13.125rem;
   }
+
   @media (min-width: 1023px) {
-    width: 32rem;
+    width: 30rem;
     height: 22rem;
   }
 `;
@@ -65,6 +87,7 @@ export default function Sterlization() {
         <BackgroundVideo autoPlay loop muted playsInline>
           <source src="/videos/sterilization.mp4" type="video/mp4" />
         </BackgroundVideo>
+        <AnimatingDots />
       </VideoContainer>
       <SterlizationSection>
         <SterilizationContainer>

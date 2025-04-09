@@ -16,7 +16,7 @@ const Container = styled("div")`
   background-color: ${Colors.white100};
   padding: 50px 15px;
   @media (max-width: 767px) {
-    padding: 0;
+    padding: 50px 0;
   }
 `;
 const TeamContent = styled("div")`
@@ -36,6 +36,9 @@ const TeamTitle = styled("div")`
   left: 0px;
   z-index: 0;
   letter-spacing: -0.01em;
+  @media (max-width: 767px) {
+    padding: 0 15px;
+  }
 `;
 const TeamContainer = styled("div")`
   display: grid;

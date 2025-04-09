@@ -33,10 +33,10 @@ export const SectionTitle = styled.h2<{
     font-size: 28.44px;
   }
   @media (min-width: 900px) {
-    font-size: 40px;
+    font-size: 36px;
   }
   @media (min-width: 1280px) {
-    font-size: 56px;
+    font-size: 48px;
   }
   @media (min-width: 1610px) {
     font-size: 60px;
